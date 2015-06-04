@@ -1,0 +1,51 @@
+<html>
+
+  <head>
+    <link rel="styesheet" href="css/openseadragon.css">
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="js/openseadragon.js"></script>
+    <script src="js/djtilesource.js"></script>
+    <style>
+      a {
+        font-color: black;
+      }
+
+      header {
+        text-align: center;
+      }
+
+      #uri {
+        width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: black;
+        padding: 20px;
+      }
+      #container {
+        width: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <div id="container">
+      <div id="uri">
+      <script>
+        var service = "http://shelleygodwinarchive.org/adore-djatoka/resolver";
+        var id = "http://shelleygodwinarchive.org/images/ox/ox-ms_abinger_c57-0102.jp2";
+        var settings = {tileSize: 256, tileOverlap: 0};
+        var tileSource = new OpenSeadragon.DjatokaTileSource(service, id, settings);
+        OpenSeadragon({
+          id: "uri",
+          prefixUrl: "/uri/images/",
+          tileSources: [tileSource],
+          showRotationControl: true
+        });
+
+      </script>
+      </div>
+    </div>
+  </body>
+
+</html>
