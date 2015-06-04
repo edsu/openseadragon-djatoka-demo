@@ -39,12 +39,14 @@
         <script>
 
           <!-- create the tile source -->
+
           var service = "http://shelleygodwinarchive.org/adore-djatoka/resolver";
           var id = "http://shelleygodwinarchive.org/images/ox/ox-ms_abinger_c57-0102.jp2";
           var settings = {tileSize: 256, tileOverlap: 0};
           var tileSource = new OpenSeadragon.DjatokaTileSource(service, id, settings);
 
           <!-- create the OpenSeadragon Viewer with the TileSource -->
+
           OpenSeadragon({
             id: "page-image",
             prefixUrl: "images/",
