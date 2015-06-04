@@ -30,15 +30,15 @@
   <body>
 
     <div id="container">
-      <div id="uri">
+      <div id="page">
       <script>
         var service = "http://shelleygodwinarchive.org/adore-djatoka/resolver";
         var id = "http://shelleygodwinarchive.org/images/ox/ox-ms_abinger_c57-0102.jp2";
         var settings = {tileSize: 256, tileOverlap: 0};
         var tileSource = new OpenSeadragon.DjatokaTileSource(service, id, settings);
         OpenSeadragon({
-          id: "uri",
-          prefixUrl: "/uri/images/",
+          id: "page",
+          prefixUrl: "images/",
           tileSources: [tileSource],
           showRotationControl: true
         });
