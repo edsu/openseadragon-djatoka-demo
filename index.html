@@ -6,6 +6,9 @@
     <script src="js/openseadragon.js"></script>
     <script src="js/djtilesource.js"></script>
     <style>
+
+      <!-- nothing fancy here -->
+
       a {
         font-color: black;
       }
@@ -14,36 +17,44 @@
         text-align: center;
       }
 
-      #uri {
+      #page-image {
         width: 800px;
         margin-left: auto;
         margin-right: auto;
         background-color: black;
         padding: 20px;
       }
+
       #container {
         width: 100%;
       }
     </style>
+
   </head>
 
   <body>
 
     <div id="container">
-      <div id="uri">
-      <script>
-        var service = "http://shelleygodwinarchive.org/adore-djatoka/resolver";
-        var id = "http://shelleygodwinarchive.org/images/ox/ox-ms_abinger_c57-0102.jp2";
-        var settings = {tileSize: 256, tileOverlap: 0};
-        var tileSource = new OpenSeadragon.DjatokaTileSource(service, id, settings);
-        OpenSeadragon({
-          id: "uri",
-          prefixUrl: "images/",
-          tileSources: [tileSource],
-          showRotationControl: true
-        });
+      <div id="page-image">
+        <script>
 
-      </script>
+          <!-- create the tile source -->
+          var service = "http://shelleygodwinarchive.org/adore-djatoka/resolver";
+          var id = "http://shelleygodwinarchive.org/images/ox/ox-ms_abinger_c57-0102.jp2";
+          var settings = {tileSize: 256, tileOverlap: 0};
+          var tileSource = new OpenSeadragon.DjatokaTileSource(service, id, settings);
+
+          <!-- create the OpenSeadragon Viewer with the TileSource -->
+          OpenSeadragon({
+            id: "page-image",
+            prefixUrl: "images/",
+            tileSources: [tileSource],
+            showRotationControl: true
+          });
+
+          <!-- That's it! -->
+
+        </script>
       </div>
     </div>
   </body>
